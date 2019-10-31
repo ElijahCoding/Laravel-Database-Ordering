@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Step extends Model
 {
+    use HasOrder;
+
     protected $fillable = ['title', 'order'];
 
     public static function boot()
