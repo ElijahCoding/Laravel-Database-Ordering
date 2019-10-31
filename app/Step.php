@@ -12,10 +12,10 @@ class Step extends Model
     {
         parent::boot();
 
-        // static::creating(function ($step) {
-        //     if (is_null($step->order)) {
-        //         $step->order = static::orderBy('order', 'desc');
-        //     }
-        // });
+         static::creating(function ($step) {
+             if (is_null($step->order)) {
+                 $step->order = static::orderBy('order', 'desc')->first()->order + 1;
+             }
+         });
     }
 }

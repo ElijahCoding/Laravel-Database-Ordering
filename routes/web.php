@@ -7,5 +7,7 @@ Route::get('/steps', function () {
 });
 
 Route::get('/steps/create', function () {
-
+    Step::create([
+        'title' => 'test'
+    ]);
 });
